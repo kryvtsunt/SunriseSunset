@@ -1,5 +1,3 @@
-<br/>
-<br/>
 <div class="container border-bottom border-dark">
   <br/>
   <div class="text-center">
@@ -14,8 +12,8 @@
           <input size="40" [(ngModel)]="city" class="form-control" name="city" placeholder="Enter city name" required/>
         </div>
         <div class="btn-group input-group-append">
-          <button (click)="getLocation()" type="submit" class="btn btn-dark" [disabled]="form1.invalid"><i class="fa fa-search"></i></button>
           <button (click)="setCurrentLocation()" title="Get data for current location" type="submit" class="btn btn-outline-secondary"><i class="fa fa-user"></i></button>
+          <button (click)="getLocation()" type="submit" class="btn btn-dark" [disabled]="form1.invalid"><i class="fa fa-search"></i></button>
         </div>
       </form>
     </div>

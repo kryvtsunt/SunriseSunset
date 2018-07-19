@@ -3,8 +3,15 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class APIServiceClient {
 
-  getAPIData(id: String) {
-    const url = 'https://api.themoviedb.org/3/movie/' + id + '?api_key=01202464e80fb52cd90af159ba329661'
+  // Sunrise sunset API
+  getAPIData(lat, lng) {
+    const url = 'https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lng + ' &formatted=1'
+    return fetch(url).then(response => response.json());
+  }
+
+  // Google Geocoding API
+  getLocation(city: String) {
+    const url = 'https://maps.google.com/maps/api/geocode/json?key=AIzaSyCBLdVMhMOKW4BbtLLfSZoYz_pL61Uz4Qk&address=' + city;
     return fetch(url).then(response => response.json());
   }
 }
